@@ -21,11 +21,11 @@ public class SpawnScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             //Instantiate(flower1, Random.insideUnitSphere * radius + transform.position, Random.rotation);
-            var clones = Instantiate(flower1);
-            clones.GetComponent<Transform>().SetParent(parent.GetComponent<Transform>(), false);
-            clones.GetComponent<Transform>().localPosition = new Vector3(Random.Range(-400, 400), Random.Range(-400, 400), 0);
-            clones.GetComponent<Transform>().localRotation = Quaternion.identity;
-            clones.GetComponent<Transform>().localScale = new Vector3(0.5f, 0.5f, 0.5f);
+            GameObject flowerSpawner = Instantiate(flower1);
+            flowerSpawner.GetComponent<Transform>().SetParent(parent.GetComponent<Transform>(), false);
+            flowerSpawner.GetComponent<Transform>().localPosition = new Vector3(Random.Range(-550, 550), Random.Range(-300, 300), 0);
+            flowerSpawner.GetComponent<Transform>().localRotation = Quaternion.identity;
+            flowerSpawner.GetComponent<Transform>().localScale = new Vector3(0.5f, 0.5f, 0.5f);
         }
     }
 }
